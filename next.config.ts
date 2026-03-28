@@ -1,8 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
-  reactCompiler: true,
+  // Enable React strict mode for catching bugs early
+  reactStrictMode: true,
 };
 
 export default nextConfig;

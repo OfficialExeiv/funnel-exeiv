@@ -1,0 +1,316 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@400;500;600;700&display=swap');
+
+/* ─── Reset ──────────────────────────────────────────────────────────────── */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: 'Barlow', sans-serif;
+  background: #080808;
+  color: #fff;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─── Utility Classes ─────────────────────────────────────────────────────── */
+.font-condensed {
+  font-family: 'Barlow Condensed', sans-serif;
+}
+
+/* ─── Noise Overlay ───────────────────────────────────────────────────────── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.5;
+}
+
+/* ─── Grid Background ─────────────────────────────────────────────────────── */
+.grid-bg {
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 42, 42, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 42, 42, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+  z-index: 0;
+  pointer-events: none;
+  animation: gridDrift 30s linear infinite;
+}
+
+/* ─── Ticker ──────────────────────────────────────────────────────────────── */
+.ticker-track {
+  display: flex;
+  animation: ticker 22s linear infinite;
+  white-space: nowrap;
+}
+
+/* ─── Animations ──────────────────────────────────────────────────────────── */
+.anim-blink       { animation: blink 1.4s ease-in-out infinite; }
+.anim-hero1       { animation: heroReveal 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both; }
+.anim-hero2       { animation: heroReveal 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.25s both; }
+.anim-fadedown    { animation: fadeDown 0.8s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.urgency-pulse    { animation: urgencyPulse 2s ease-in-out infinite; }
+
+/* ─── Buttons ─────────────────────────────────────────────────────────────── */
+.btn-fire {
+  position: relative;
+  overflow: hidden;
+  animation: firePulse 2.2s ease-in-out infinite;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, background 0.2s;
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+}
+.btn-fire::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.18), transparent);
+  animation: shimmerSlide 2.8s ease-in-out infinite;
+  pointer-events: none;
+}
+.btn-fire::after {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, #ff2a2a, #ff6b6b, #ff2a2a, #cc0000);
+  background-size: 300% 300%;
+  animation: borderGlow 3s ease infinite;
+  z-index: -1;
+  filter: blur(8px);
+  opacity: 0.7;
+}
+.btn-fire:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 40px rgba(255, 42, 42, 0.65), 0 0 0 1px rgba(255, 42, 42, 0.4);
+  animation-play-state: paused;
+}
+.btn-fire:active { transform: translateY(0) scale(0.98); }
+
+.btn-electric {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, background 0.2s;
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+}
+.btn-electric::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+  animation: shimmerSlide 2.4s ease-in-out infinite 0.6s;
+  pointer-events: none;
+}
+.btn-electric:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 35px rgba(255, 42, 42, 0.55), 0 0 0 2px rgba(255, 42, 42, 0.5);
+}
+.btn-electric:active { transform: translateY(0) scale(0.98); }
+
+.btn-sticky {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  text-decoration: none;
+  animation: firePulse 2.2s ease-in-out infinite 0.4s;
+  text-align: center;
+}
+.btn-sticky::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  animation: shimmerSlide 2.5s ease-in-out infinite 1s;
+  pointer-events: none;
+}
+
+/* ─── Popover ─────────────────────────────────────────────────────────────── */
+.popover-cta-btn {
+  display: block;
+  width: 100%;
+  text-decoration: none;
+  text-align: center;
+  animation: pulse2 2.5s ease-in-out infinite;
+}
+.popover-cta-btn:hover {
+  transform: translateY(-1px);
+  background: #cc0000 !important;
+}
+.popover-bar {
+  height: 4px;
+  background: linear-gradient(90deg, #ff2a2a, #ff6b6b, #ff2a2a);
+  background-size: 200%;
+  animation: shimmer 2s linear infinite;
+}
+.popover-overlay-anim { animation: overlayIn 0.3s ease both; }
+.popover-modal-anim {
+  animation: popoverIn 0.45s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* ─── Cards ───────────────────────────────────────────────────────────────── */
+/* Auth card — red left-border accent */
+.auth-card {
+  position: relative;
+  overflow: hidden;
+}
+.auth-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: #ff2a2a;
+}
+
+/* Process card — animated bottom underline on hover */
+.process-card {
+  position: relative;
+  overflow: hidden;
+}
+.process-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #ff2a2a;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.process-card:hover::after { transform: scaleX(1); }
+
+/* Pain items */
+.pain-item {
+  transition: border-color 0.3s, background 0.3s;
+}
+.pain-item:hover {
+  border-color: rgba(255, 42, 42, 0.2) !important;
+  background: rgba(255, 42, 42, 0.06) !important;
+}
+
+/* Case study items */
+.case-item {
+  transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+.case-item:hover {
+  border-color: rgba(255, 42, 42, 0.35) !important;
+  transform: translateX(6px);
+  box-shadow: -4px 0 0 0 #ff2a2a;
+}
+
+/* CTA glow */
+.cta-glow::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 0%, rgba(255, 42, 42, 0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* Urgency watermark */
+.urgency-watermark {
+  position: absolute;
+  right: -40px;
+  top: 50%;
+  transform: translateY(-50%) rotate(90deg);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(4rem, 10vw, 8rem);
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.06);
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+/* Scroll progress glow */
+.scroll-prog {
+  box-shadow: 0 0 12px #ff2a2a;
+}
+
+/* Mobile padding for sticky CTA */
+@media (max-width: 767px) {
+  body { padding-bottom: 80px; }
+}
+
+/* ─── Keyframes ───────────────────────────────────────────────────────────── */
+@keyframes gridDrift {
+  0%   { background-position: 0 0; }
+  100% { background-position: 60px 60px; }
+}
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.2; }
+}
+@keyframes heroReveal {
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes firePulse {
+  0%   { box-shadow: 0 0 0 0 rgba(255, 42, 42, 0.7), 0 4px 20px rgba(255, 42, 42, 0.3); }
+  50%  { box-shadow: 0 0 0 12px rgba(255, 42, 42, 0), 0 4px 30px rgba(255, 42, 42, 0.5); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 42, 42, 0), 0 4px 20px rgba(255, 42, 42, 0.3); }
+}
+@keyframes shimmerSlide {
+  0%   { left: -100%; }
+  60%  { left: 150%; }
+  100% { left: 150%; }
+}
+@keyframes borderGlow {
+  0%, 100% { background-position: 0% 50%; }
+  50%       { background-position: 100% 50%; }
+}
+@keyframes pulse2 {
+  0%   { box-shadow: 0 0 0 0 rgba(255, 42, 42, 0.6); }
+  60%  { box-shadow: 0 0 0 18px rgba(255, 42, 42, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 42, 42, 0); }
+}
+@keyframes urgencyPulse {
+  0%, 100% { background: rgba(255, 42, 42, 0.15); }
+  50%       { background: rgba(255, 42, 42, 0.28); }
+}
+@keyframes overlayIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes popoverIn {
+  from { opacity: 0; transform: translate(-50%, -50%) scale(0.92); }
+  to   { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+}
+@keyframes shimmer {
+  0%   { background-position: 0%; }
+  100% { background-position: 200%; }
+}
