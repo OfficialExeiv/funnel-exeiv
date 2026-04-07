@@ -1,0 +1,122 @@
+================================================================================
+  EXEIV FUNNEL — POST-UPDATE TODO LIST
+  Updated: 2026-03-29
+================================================================================
+
+All content text is now REAL — based on your actual case studies for
+WealthGooru, Panthar Media, and MrFinFit. The only things left for
+you to provide are MEDIA ASSETS (images, videos, logos).
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ 1. VIDEO TESTIMONIALS (3 cards)
+    File: src/components/sections/VideoTestimonials.tsx
+    Data: src/lib/constants.ts → VIDEO_TESTIMONIALS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  Content is real (based on actual project deliverables). You need to provide:
+
+  [ ] WealthGooru — Record a video testimonial (30-60s)
+      → Update videoUrl and thumbnailUrl in constants.ts
+      → Replace the placeholder <div> in VideoTestimonials.tsx with <iframe>
+
+  [ ] Panthar Media — Record a video testimonial (30-60s)
+      → Same as above
+
+  [ ] MrFinFit — Record a video testimonial (30-60s)
+      → Same as above
+
+  [ ] OPTIONAL: Update the "name" field to be the actual founder's name
+      instead of "WealthGooru Team" etc. (currently generic so you can
+      use it with or without a named person)
+
+  HOW TO REPLACE THE VIDEO PLACEHOLDER:
+  In VideoTestimonials.tsx, find the block after "activeVideo === i" and
+  replace the placeholder <div> with something like:
+    <iframe
+      src={testimonial.videoUrl}
+      width="100%" height="100%"
+      frameBorder="0" allowFullScreen
+      style={{ position: "absolute", inset: 0 }}
+    />
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ 2. WRITTEN TESTIMONIALS (3 cards)
+    File: src/components/sections/WrittenTestimonials.tsx
+    Data: src/lib/constants.ts → WRITTEN_TESTIMONIALS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  Content is real (describes actual deliverables). You need:
+
+  [ ] Client headshot/logo images for all 3 companies
+
+  HOW TO REPLACE AVATAR PLACEHOLDERS:
+  In WrittenTestimonials.tsx, replace the initials <div> with:
+    <img src={t.avatarUrl} alt={t.name}
+      style={{ width: 44, height: 44, borderRadius: "50%", objectFit: "cover" }} />
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ 3. CLIENT LOGOS (3 logos — all real clients)
+    File: src/components/sections/ClientLogos.tsx
+    Data: src/lib/constants.ts → CLIENT_LOGOS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  All 3 are your REAL clients. You just need their logos:
+
+  [ ] WealthGooru logo → Save to /public/logos/wealthgooru.svg (or .png)
+  [ ] Panthar Media logo → Save to /public/logos/panthar-media.svg
+  [ ] MrFinFit logo → Save to /public/logos/mrfinfit.svg
+
+  HOW TO REPLACE INITIALS WITH LOGOS:
+  In ClientLogos.tsx, replace the initials <div> with:
+    <img src={`/logos/${filename}`} alt={client.name}
+      style={{ height: 24, filter: "grayscale(1) brightness(0.7)" }} />
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ 4. CASE STUDY RESULTS — VERIFY ACCURACY
+    Data: src/lib/constants.ts → CASE_STUDIES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  All text is based on your real case study documents. Double-check:
+
+  [ ] WealthGooru result → "50,000+ students · 120+ countries" — accurate?
+  [ ] Panthar Media result → "Full digital transformation" — want something
+      more specific like "Team efficiency improved 40%"?
+  [ ] MrFinFit result → "25+ services · Multi-role SaaS" — accurate?
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ 5. OPTIONAL: ADD MORE CLIENT LOGOS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  With only 3 logos the "Trusted By" strip looks a bit thin.
+  Consider adding 3-4 more of your other clients (even smaller projects)
+  to make it feel more established. Just add entries to CLIENT_LOGOS
+  in constants.ts.
+
+
+================================================================================
+  FILES CHANGED IN THIS UPDATE
+================================================================================
+
+  NEW:
+    ✓ src/components/sections/ClientLogos.tsx
+    ✓ src/components/sections/VideoTestimonials.tsx
+    ✓ src/components/sections/WrittenTestimonials.tsx
+    ✓ CHANGES_TODO.txt (this file)
+
+  MODIFIED:
+    ✓ src/lib/constants.ts — All data now real from case studies
+    ✓ src/app/page-client.tsx — New funnel flow
+    ✓ src/components/sections/SocialProof.tsx — Detailed case study cards
+    ✓ src/styles/globals.css — Styles for new components
+
+  FUNNEL FLOW:
+    Ticker → Hero → Client Logos → Social Proof (detailed case studies)
+    → Video Testimonials → Written Testimonials → Process
+    → Pain Points → Urgency → About → FAQ & CTA
+
+================================================================================

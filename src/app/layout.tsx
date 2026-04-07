@@ -1,32 +1,41 @@
 import type { Metadata } from "next";
-import "@/styles/globals.css";
-import { organizationJsonLd, serviceJsonLd, faqJsonLd } from "@/lib/jsonLd";
+import { Montserrat, Roboto_Condensed, Geist } from "next/font/google";
+import "@/app/globals.css";
+import { serviceJsonLd, faqJsonLd } from "@/lib/jsonLd";
+import { cn } from "@/lib/utils";
+
+const geist = Geist({subsets:['latin'],variable:'--font-sans'});
+
+
+// ─── Fonts ───────────────────────────────────────────────────────────────────
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  variable: "--font-montserrat",
+  display: "swap",
+});
+
+const robotoCondensed = Roboto_Condensed({
+  subsets: ["latin"],
+  variable: "--font-roboto-condensed",
+  display: "swap",
+});
 
 // ─── SEO Metadata ────────────────────────────────────────────────────────────
 export const metadata: Metadata = {
-  metadataBase: new URL("https://exeiv.com"),
+  metadataBase: new URL("https://solution.exeiv.com"),
 
-  title: {
-    default: "EXEIV — Production-Grade Web Platforms in 30 Days | Custom Software & SaaS",
-    template: "%s | EXEIV",
-  },
+  title:
+    "Free Business Bottleneck Audit | EXEIV — Custom Software for Non-Tech Founders",
   description:
-    "Get a high-converting web platform built in 30 days — or you don't pay. EXEIV engineers production-grade websites, SaaS platforms & custom software for ambitious founders, agencies & companies worldwide.",
+    "Book a free 30-minute audit call with EXEIV. We map where your business is leaking money due to bad tech — and give you a real plan. No pitch. No invoice.",
   keywords: [
-    "web design agency",
-    "SaaS development",
-    "Next.js agency",
-    "UI UX design",
-    "custom software development",
-    "web platform development",
-    "high-converting website",
-    "production-grade web app",
-    "full-stack development agency",
-    "startup web development",
-    "agency website design",
-    "SaaS platform builder",
-    "30 day website delivery",
-    "risk free web development",
+    "custom software for founders",
+    "business software development",
+    "non-tech founder tech partner",
+    "custom SaaS development",
+    "web application development agency",
+    "business automation software",
+    "startup software development",
   ],
   authors: [
     { name: "Aryan Thakur", url: "https://exeiv.com" },
@@ -36,7 +45,7 @@ export const metadata: Metadata = {
   publisher: "EXEIV",
 
   alternates: {
-    canonical: "https://exeiv.com",
+    canonical: "https://solution.exeiv.com",
   },
 
   robots: {
@@ -54,19 +63,27 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://exeiv.com",
+    url: "https://solution.exeiv.com",
     siteName: "EXEIV",
-    title: "EXEIV — Production-Grade Web Platforms in 30 Days",
+    title: "Free Business Bottleneck Audit | EXEIV",
     description:
-      "High-converting websites & custom software — delivered in 30 days or you don't pay. Built by engineers, not template-pushers.",
+      "Walk away with a Tech Stack Audit and Revenue Leak Map — free, before we ever talk about a project.",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "EXEIV Free Bottleneck Audit",
+      },
+    ],
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "EXEIV — Production-Grade Web Platforms in 30 Days",
+    title: "Free Business Bottleneck Audit | EXEIV",
     description:
-      "High-converting websites & custom software — delivered in 30 days or you don't pay.",
-    creator: "@exeiv",
+      "Custom software partner for non-tech founders. Book your free audit.",
+    images: ["/og-image.png"],
   },
 
   category: "technology",
@@ -79,15 +96,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html
+      lang="en"
+      className={cn(montserrat.variable, robotoCondensed.variable, "font-sans", geist.variable)}
+    >
       <head>
-        {/* JSON-LD structured data for rich snippets */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(organizationJsonLd),
-          }}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
         />
+
+        {/* JSON-LD structured data for rich snippets */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -102,9 +123,6 @@ export default function RootLayout({
         />
       </head>
       <body>
-        {/* Fixed decorative grid background — sits behind all content */}
-        <div className="grid-bg" aria-hidden="true" />
-
         <main>{children}</main>
       </body>
     </html>
