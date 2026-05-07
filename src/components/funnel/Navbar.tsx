@@ -38,8 +38,8 @@ export function Navbar() {
         <div
           className={`glass rounded-2xl md:rounded-3xl transition-all duration-500 flex items-center justify-between px-6 md:px-10 ${
             scrolled
-              ? "h-16 shadow-2xl shadow-black/40"
-              : "h-20 md:h-24"
+              ? "h-16 shadow-[0_20px_50px_rgba(0,0,0,0.5),0_0_20px_rgba(115,60,151,0.15)] border-[var(--brand-accent)]/20"
+              : "h-20 md:h-24 border-white/5"
           }`}
         >
           {/* ── Logo ── */}
