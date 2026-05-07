@@ -1,25 +1,49 @@
 // ─── Site Config ─────────────────────────────────────────────────────────────
 export const CALENDLY_URL = "https://cal.com/exeiv/30min";
 
-// ─── Stats ───────────────────────────────────────────────────────────────────
-export const STATS = [
+// ─── Hero Stats (counter animation targets) ───────────────────────────────────
+export const HERO_STATS = [
   { target: 120, suffix: "+", label: "Products Shipped" },
-  { target: 50, suffix: "K+", label: "Users Served" },
-  { target: 6, suffix: "+", label: "Countries" },
-  { target: 30, suffix: "-Day", label: "Delivery Guarantee" },
+  { target: 50,  suffix: "K+", label: "Students Served" },
+  { target: 7,   suffix: "+", label: "Industries" },
+  { target: 0,   suffix: "$", label: "Audit Cost", prefix: "$" },
 ];
 
 // ─── Pain Points ─────────────────────────────────────────────────────────────
 export const PAIN_POINTS = [
-  "Your \"system\" is a spreadsheet held together by hope and manual copy-paste.",
-  "You hired freelancers who ghosted after 3 weeks and left you with broken code.",
-  "You pay for 5 different SaaS tools that don't talk to each other.",
-  "Your competitor is closing bigger deals because their tech looks premium.",
-  "You have no single dashboard that shows you the full picture of your business.",
-  "You're paying monthly for software that was never built for the way you actually work.",
+  {
+    icon: "spreadsheet",
+    pain: "Spreadsheets held together with hope & copy-paste",
+    cost: "Costs 10+ hrs/week in manual work nobody can scale.",
+  },
+  {
+    icon: "ghost",
+    pain: "Freelancers who ghosted with broken, unfinished code",
+    cost: "Dead codebase, missed launches, money you'll never get back.",
+  },
+  {
+    icon: "silos",
+    pain: "5 SaaS tools that don't talk to each other",
+    cost: "Data gaps and manual exports are silent revenue killers.",
+  },
+  {
+    icon: "competitor",
+    pain: "Competitor closes bigger deals — their tech looks premium",
+    cost: "Trust is built visually. Poor tech = lost deals before hello.",
+  },
+  {
+    icon: "blind",
+    pain: "No single dashboard showing the full business picture",
+    cost: "Decisions made blind cost 3× more than decisions made clearly.",
+  },
+  {
+    icon: "saas",
+    pain: "Paying monthly for software not built for how you work",
+    cost: "Average founder wastes $2,400/yr on tools that don't fit.",
+  },
 ];
 
-// ─── Free Offer Deliverables ─────────────────────────────────────────────────
+// ─── Free Deliverables (kept for reference) ────────────────────────────────
 export const FREE_DELIVERABLES = [
   {
     title: "Tech Stack Audit",
@@ -39,26 +63,37 @@ export const FREE_DELIVERABLES = [
 export const PROCESS_STEPS = [
   {
     n: "01",
-    title: "Fill a 5-minute form",
-    desc: "Tell us about your business and the biggest operational headache keeping you up at night.",
+    title: "Fill a 5-min form",
+    desc: "Tell us your biggest operational headache. Takes 5 minutes — and it gives us everything we need to do real homework.",
   },
   {
     n: "02",
-    title: "We prepare",
-    desc: "We audit your tech stack and map your revenue leaks before we even meet. You show up to a call that's already done the homework.",
+    title: "We do the homework",
+    desc: "We audit your stack before we even meet. You show up to a call that's already done the diagnosis.",
   },
   {
     n: "03",
-    title: "Get on a 30-min call",
-    desc: "Walk away with a diagnosis and a real plan, whether you hire us or not. No pitch. No pressure.",
+    title: "30-min clarity call",
+    desc: "Walk away with a diagnosis and a real plan. Hired or not. No pitch. No pressure.",
   },
 ];
 
 // ─── Case Studies ────────────────────────────────────────────────────────────
 export const CASE_STUDIES = [
+    {
+    tag: "Advisory · Institutional Platform",
+    stat: "Cabinet-Level Scale",
+    headline: "Global ocean strategy. Institutional scale. One unified platform.",
+    bullets: [
+      "Architected a complex digital presence for cabinet-level maritime advisory",
+      "Integrated multi-national project tracking and donor strategy dashboards",
+      "Engineered a high-performance, minimalist brand identity for global credibility",
+    ],
+  },
   {
     tag: "EdTech · Course Platform",
-    headline: "50,000 students. Content protected. Referrals automated.",
+    stat: "50,000 Students",
+    headline: "Content protected. Referrals automated. Revenue secured.",
     bullets: [
       "Built a secure video platform with multi-layer DRM and anti-piracy controls",
       "Engineered a 3-level referral commission engine with automated payouts",
@@ -67,6 +102,7 @@ export const CASE_STUDIES = [
   },
   {
     tag: "Agency · Operations Software",
+    stat: "4 Tools → 1 Dashboard",
     headline: "One dashboard replaced 4 tools and 12 spreadsheets.",
     bullets: [
       "Custom project management platform with task hierarchy and role-based access",
@@ -76,6 +112,7 @@ export const CASE_STUDIES = [
   },
   {
     tag: "Fintech · Compliance SaaS",
+    stat: "25+ Services, 3 Roles",
     headline: "25+ financial services. Three user roles. One platform.",
     bullets: [
       "Multi-role architecture: separate Admin, Agent, and Client dashboards",
@@ -85,6 +122,7 @@ export const CASE_STUDIES = [
   },
   {
     tag: "Logistics · Tracking System",
+    stat: "Zero Manual Entry",
     headline: "Export-import ops tracked in real time. Zero manual entry.",
     bullets: [
       "Automated shipment tracking and documentation generation",
@@ -128,15 +166,22 @@ export const TESTIMONIALS = [
     name: "Sunil K.",
     context: "Founder, Finance Academy",
     quote:
-      "The website they delivered is not only stunning but perfectly represents our brand authority in the financial markets. Scaling a niche academy requires both speed and precision, and they delivered both.",
+      "The platform they delivered perfectly represents our brand authority in the financial markets. Scaling a niche academy requires both speed and precision — they delivered both.",
     initials: "SK",
   },
   {
     name: "Shashi B.",
     context: "Founder, Executive Leadership Consultancy",
     quote:
-      "We needed a web presence that matched our executive-level consulting. They architected a high-converting funnel that improved our lead quality and brand perception significantly.",
+      "They architected a high-converting funnel that improved our lead quality and brand perception significantly. The engineering discipline is something I've never seen matched.",
     initials: "SB",
+  },
+  {
+    name: "Stuart J. Green",
+    context: "Founder, Blue-Green Advisors",
+    quote:
+      "EXEIV delivered a digital platform that holds the complexity of our multi-national ocean advisory. Their engineering discipline and design excellence made them the only partner we considered.",
+    initials: "SG",
   },
 ];
 
@@ -144,11 +189,11 @@ export const TESTIMONIALS = [
 export const TEAM = [
   {
     name: "Aryan Thakur",
-    role: "Co-Founder & CEO",
+    role: "Founder & CEO",
     creds: [
-      "Client strategy & project scoping",
-      "Revenue-first growth planning",
+      "Client strategy & revenue-first project scoping",
       "Makes sure we ship what actually moves your business",
+      "The bridge between your vision and executable engineering",
     ],
     initials: "AT",
   },
@@ -156,9 +201,9 @@ export const TEAM = [
     name: "Navansh Mishra",
     role: "Co-Founder & CTO",
     creds: [
-      "Full-stack architect",
-      "120+ products shipped",
+      "Full-stack architect · 120+ products shipped",
       "Writes the code that makes it all work",
+      "Owns every line — no hand-offs, no middlemen",
     ],
     initials: "NM",
   },
@@ -178,26 +223,42 @@ export const TICKER_ITEMS = [
 export const FAQ_ITEMS = [
   {
     q: "Is this a sales call?",
-    a: "No. It is a diagnosis. We review your tech, map your leaks, and give you a plan. We only pitch if you ask us to.",
-  },
-  {
-    q: "What if I'm not ready to build yet?",
-    a: "That is fine. The audit is still valuable. You walk away with a clear picture of what is costing you money and what to fix first, even if you do nothing for 6 months.",
-  },
-  {
-    q: "Where are you based?",
-    a: "India-based, globally remote. Our clients are in the US, UK, Canada, and Australia. Time zones have never been a problem.",
+    a: "No. We prepare before the call. We audit your stack, map your revenue leaks, and give you a real plan. You leave with a diagnosis whether you hire us or not.",
   },
   {
     q: "How much do projects cost?",
-    a: "Projects start from $3,000. We scope before we quote. You will know the exact price, timeline, and deliverables before anything starts. No surprises.",
+    a: "Scope-dependent. Most projects range $5K–$50K+. The audit helps us both understand if it's a fit before we talk numbers. No surprises, ever.",
   },
   {
     q: "How long does a project take?",
-    a: "Most projects are 4 to 8 weeks. Complex platforms take longer. We tell you upfront so you can plan around it.",
+    a: "MVPs in 4–8 weeks. Complex platforms 3–6 months. Always scoped upfront — never a moving target. You'll know exact timelines before anything starts.",
+  },
+  {
+    q: "What if I'm not ready to build yet?",
+    a: "Perfect time for an audit. You'll know exactly what to build, when to build it, and what it'll cost. Zero commitment needed.",
   },
   {
     q: "Do you do websites or software?",
-    a: "Both. Often together. It depends on what your business actually needs. We figure that out on the audit call.",
+    a: "Both. But we focus on engineered solutions — platforms, dashboards, automation systems — not brochure sites. It depends on what your business actually needs.",
   },
+  {
+    q: "Where are you based?",
+    a: "Remote-first studio. We work with founders worldwide — US, UK, Canada, Australia. Time zones have never been a problem.",
+  },
+];
+
+// ─── Social Proof Toast Names ─────────────────────────────────────────────────
+export const TOAST_NAMES = [
+  { name: "Rahul M.", time: "1 hour ago" },
+  { name: "Sarah L.", time: "5 hours ago" },
+  { name: "David C.", time: "6 hours ago" },
+  { name: "Emily R.", time: "7 hours ago" },
+  { name: "Michael B.", time: "8 hours ago" },
+  { name: "Jessica M.", time: "9 hours ago" },
+  { name: "Daniel K.", time: "10 hours ago" },
+  { name: "Olivia T.", time: "11 hours ago" },
+  { name: "James W.", time: "12 hours ago" },
+  { name: "Sophia H.", time: "13 hours ago" },
+  { name: "William R.", time: "14 hours ago" },
+  { name: "Ava L.", time: "15 min ago" },
 ];

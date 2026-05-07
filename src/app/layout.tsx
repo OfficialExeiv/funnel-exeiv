@@ -1,22 +1,21 @@
 import type { Metadata } from "next";
-import { Montserrat, Roboto_Condensed, Geist } from "next/font/google";
+import { Syne, DM_Sans } from "next/font/google";
 import "@/app/globals.css";
 import { serviceJsonLd, faqJsonLd } from "@/lib/jsonLd";
 import { cn } from "@/lib/utils";
 
-const geist = Geist({subsets:['latin'],variable:'--font-sans'});
-
-
 // ─── Fonts ───────────────────────────────────────────────────────────────────
-const montserrat = Montserrat({
+const syne = Syne({
   subsets: ["latin"],
-  variable: "--font-montserrat",
+  weight: ["400", "600", "700", "800"],
+  variable: "--font-heading",
   display: "swap",
 });
 
-const robotoCondensed = Roboto_Condensed({
+const dmSans = DM_Sans({
   subsets: ["latin"],
-  variable: "--font-roboto-condensed",
+  weight: ["400", "500", "600"],
+  variable: "--font-sans",
   display: "swap",
 });
 
@@ -89,6 +88,26 @@ export const metadata: Metadata = {
   category: "technology",
 };
 
+// ─── Background Lines Component ──────────────────────────────────────────────
+function BackgroundLines() {
+  return (
+    <div className="fixed inset-0 z-50 pointer-events-none overflow-hidden">
+      {/* Subtle grid pattern */}
+      <div className="absolute inset-0 bg-grid opacity-20" />
+      
+      {/* Vertical architectural lines */}
+      <div className="max-w-6xl mx-auto h-full flex justify-between px-6 md:px-8">
+        {[...Array(6)].map((_, i) => (
+          <div 
+            key={i} 
+            className="w-[1px] h-full bg-gradient-to-b from-transparent via-white/[0.05] to-transparent" 
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
+
 // ─── Root Layout ──────────────────────────────────────────────────────────────
 export default function RootLayout({
   children,
@@ -98,7 +117,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={cn(montserrat.variable, robotoCondensed.variable, "font-sans", geist.variable)}
+      className={cn(syne.variable, dmSans.variable, "font-sans")}
     >
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -122,8 +141,9 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body>
-        <main>{children}</main>
+      <body className="relative min-h-screen">
+        <BackgroundLines />
+        {children}
       </body>
     </html>
   );

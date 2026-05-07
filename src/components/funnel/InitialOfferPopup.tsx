@@ -1,0 +1,80 @@
+"use client";
+
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import { CALENDLY_URL } from "@/lib/constants";
+
+export function InitialOfferPopup() {
+  const [show, setShow] = useState(false);
+
+  useEffect(() => {
+    // Show instantly on every load
+    setShow(true);
+  }, []);
+
+  if (!show) return null;
+
+  return (
+    <div className="fixed inset-0 z-[100] flex items-center justify-center px-6 pointer-events-none">
+      {/* Backdrop overlay */}
+      <div 
+        className="absolute inset-0 bg-black/60 backdrop-blur-sm pointer-events-auto"
+        onClick={() => setShow(false)}
+      />
+
+      <div className="relative w-full max-w-lg glass-accent rounded-[2.5rem] p-8 md:p-12 text-center pointer-events-auto anim-reveal shadow-[0_0_100px_rgba(115,60,151,0.2)]">
+        {/* Close button */}
+        <button
+          onClick={() => setShow(false)}
+          className="absolute top-6 right-6 text-[var(--brand-soft)]/50 hover:text-[var(--brand-base)] transition-colors p-2"
+          aria-label="Close offer"
+        >
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+
+        <span className="text-[var(--brand-accent)] text-xs uppercase tracking-widest font-bold font-heading block mb-6">
+          Limited Time Offer
+        </span>
+
+        <h2 className="font-heading text-3xl md:text-4xl font-bold text-[var(--brand-base)] mb-4">
+          Claim Your Free <br />
+          <span className="text-[var(--brand-accent)]">$2,000 Tech Audit</span>
+        </h2>
+
+        <p className="text-[var(--brand-soft)] font-sans text-base mb-8 leading-relaxed">
+          We identify exactly where your business is leaking revenue. 
+          <span className="block mt-2 font-bold text-[var(--brand-base)]">
+            Only 4 spots available per week.
+          </span>
+        </p>
+
+        {/* Urgency indicator */}
+        <div className="bg-white/5 rounded-2xl p-4 mb-10">
+          <div className="flex justify-between text-[10px] uppercase tracking-widest font-bold mb-2">
+            <span className="text-[var(--brand-soft)]/60">Weekly Availability</span>
+            <span className="text-[var(--brand-accent)]">2 Spots Left</span>
+          </div>
+          <div className="h-1.5 w-full bg-white/5 rounded-full overflow-hidden">
+            <div className="h-full bg-[var(--brand-accent)] w-1/2 rounded-full shadow-[0_0_10px_rgba(115,60,151,0.5)]" />
+          </div>
+        </div>
+
+        <Link
+          href={CALENDLY_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={() => setShow(false)}
+          className="cta-glow cta-pulse block w-full bg-[var(--brand-accent)] text-white font-heading font-bold py-5 rounded-2xl text-lg hover:opacity-90 transition-opacity tracking-wide"
+        >
+          Secure My Free Audit →
+        </Link>
+
+        <p className="text-[var(--brand-soft)]/40 text-[10px] mt-6 uppercase tracking-widest font-heading">
+          No credit card required · 30-min strategy call
+        </p>
+      </div>
+    </div>
+  );
+}
