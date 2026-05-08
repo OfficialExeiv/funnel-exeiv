@@ -39,10 +39,7 @@ export function AuditOfferSection() {
           <h2 className="font-heading text-4xl md:text-6xl font-bold text-brand-base mb-6 leading-tight">
             A $2,000 Audit.{" "}
             <span className="text-brand-accent">Free.</span>
-            <br />
-            <span className="text-3xl md:text-4xl text-brand-soft font-semibold">
-              For 4 Founders Per Week.
-            </span>
+
           </h2>
         </div>
 
@@ -87,22 +84,7 @@ export function AuditOfferSection() {
           </div>
         </div>
 
-        {/* Urgency progress bar */}
-        <div className="max-w-md mx-auto mb-12">
-          <div className="flex justify-between text-xs uppercase tracking-widest font-heading font-bold mb-3">
-            <span className="text-brand-soft">Weekly spots</span>
-            <span className="text-brand-accent">2 of 4 claimed</span>
-          </div>
-          <div className="h-2 w-full rounded-full bg-white/8 overflow-hidden">
-            <div
-              className="h-full rounded-full bg-brand-accent progress-bar-fill"
-              style={{ width: "0%" }}
-            />
-          </div>
-          <p className="text-(--brand-soft)/50 text-xs text-center mt-3 font-sans">
-            2 of 4 spots claimed this week
-          </p>
-        </div>
+
 
         {/* CTA */}
         <div className="text-center">
@@ -114,7 +96,7 @@ export function AuditOfferSection() {
             aria-label="Book your free audit"
             className="cta-glow cta-pulse inline-flex items-center gap-3 bg-brand-accent text-white font-heading font-bold px-10 py-5 rounded-2xl transition-all hover:opacity-90 tracking-wide text-lg"
           >
-            Book My Free Audit — Only 4 Spots/Week
+            Book My Free Audit
           </Link>
           <p className="text-(--brand-soft)/40 text-xs mt-5 uppercase tracking-widest font-heading">
             No payment · No pressure · No pitch · Just answers

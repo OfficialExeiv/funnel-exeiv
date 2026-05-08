@@ -3,10 +3,10 @@ export const CALENDLY_URL = "https://cal.com/exeiv/30min";
 
 // ─── Hero Stats (counter animation targets) ───────────────────────────────────
 export const HERO_STATS = [
-  { target: 120, suffix: "+", label: "Products Shipped" },
-  { target: 50,  suffix: "K+", label: "Students Served" },
-  { target: 7,   suffix: "+", label: "Industries" },
-  { target: 0,   suffix: "$", label: "Audit Cost", prefix: "$" },
+  { target: 220, suffix: "+", label: "Product Shipped", prefix: "" },
+  { target: 200, suffix: "+", label: "Clients Served Internationally", prefix: "" },
+  { target: 10,  suffix: "+", label: "Industries", prefix: "" },
+  { target: 0,   suffix: "",  label: "Audit Cost", prefix: "" },
 ];
 
 // ─── Pain Points ─────────────────────────────────────────────────────────────
@@ -28,8 +28,8 @@ export const PAIN_POINTS = [
   },
   {
     icon: "competitor",
-    pain: "Competitor closes bigger deals — their tech looks premium",
-    cost: "Trust is built visually. Poor tech = lost deals before hello.",
+    pain: "Competitor closes bigger deals — their website looks premium",
+    cost: "Trust is built visually. Poor website = lost deals before hello.",
   },
   {
     icon: "blind",
@@ -201,7 +201,7 @@ export const TEAM = [
     name: "Navansh Mishra",
     role: "Co-Founder & CTO",
     creds: [
-      "Full-stack architect · 120+ products shipped",
+      "Full-stack architect · 220+ products shipped",
       "Writes the code that makes it all work",
       "Owns every line — no hand-offs, no middlemen",
     ],
@@ -211,7 +211,7 @@ export const TEAM = [
 
 // ─── Ticker / Marquee ────────────────────────────────────────────────────────
 export const TICKER_ITEMS = [
-  "120+ Products Shipped",
+  "220+ Product Shipped",
   "30-Day Delivery Guarantee",
   "Trusted by Founders in 6 Countries",
   "Full-Stack Design & Engineering",

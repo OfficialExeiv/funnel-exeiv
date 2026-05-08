@@ -45,21 +45,10 @@ export function InitialOfferPopup() {
 
         <p className="text-brand-soft font-sans text-base mb-8 leading-relaxed">
           We identify exactly where your business is leaking revenue. 
-          <span className="block mt-2 font-bold text-brand-base">
-            Only 4 spots available per week.
-          </span>
+
         </p>
 
-        {/* Urgency indicator */}
-        <div className="bg-white/5 rounded-2xl p-4 mb-10">
-          <div className="flex justify-between text-[10px] uppercase tracking-widest font-bold mb-2">
-            <span className="text-(--brand-soft)/60">Weekly Availability</span>
-            <span className="text-brand-accent">2 Spots Left</span>
-          </div>
-          <div className="h-1.5 w-full bg-white/5 rounded-full overflow-hidden">
-            <div className="h-full bg-brand-accent w-1/2 rounded-full shadow-[0_0_10px_rgba(115,60,151,0.5)]" />
-          </div>
-        </div>
+
 
         <Link
           href={CALENDLY_URL}

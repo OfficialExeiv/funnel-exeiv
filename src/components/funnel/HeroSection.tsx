@@ -86,8 +86,8 @@ export function HeroSection() {
         {/* Trust bar */}
         <div className="anim-reveal anim-delay-4 mb-16 flex flex-wrap items-center justify-center gap-x-7 gap-y-3 text-brand-soft text-xs font-sans tracking-widest uppercase">
           {[
-            "120+ Products Shipped",
-            "$0 Audit",
+            "220+ Product Shipped",
+            "0 Audit Cost",
             "No Pitch Pressure",
             "Trusted by 7-Figure Founders",
           ].map((item, i) => (

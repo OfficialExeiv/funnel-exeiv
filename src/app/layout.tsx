@@ -106,7 +106,6 @@ function BackgroundLines() {
   return (
     <div className="fixed inset-0 z-50 pointer-events-none overflow-hidden">
       {/* Subtle grid pattern */}
-      <div className="absolute inset-0 bg-grid opacity-20" />
       
       {/* Vertical architectural lines */}
       <div className="max-w-6xl mx-auto h-full flex justify-between px-6 md:px-8">
