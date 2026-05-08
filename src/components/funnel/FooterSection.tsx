@@ -11,7 +11,7 @@ const NAV_LINKS = [
 
 export function FooterSection() {
   return (
-    <footer className="relative py-14 bg-[var(--brand-dark)] border-t border-white/5">
+    <footer className="relative py-14 bg-brand-dark border-t border-white/5">
       <div className="max-w-6xl mx-auto px-6 md:px-8">
         <div className="flex flex-col md:flex-row items-center md:items-start justify-between gap-10">
           {/* Logo + tagline */}
@@ -25,7 +25,7 @@ export function FooterSection() {
                 className="h-7 w-auto brightness-90 group-hover:brightness-100 transition-all duration-300"
               />
             </Link>
-            <p className="text-[var(--brand-soft)]/40 font-sans text-xs uppercase tracking-widest">
+            <p className="text-(--brand-soft)/40 font-sans text-xs uppercase tracking-widest">
               Engineering the future of operations.
             </p>
           </div>
@@ -39,7 +39,7 @@ export function FooterSection() {
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[var(--brand-accent)] font-heading font-bold text-xs uppercase tracking-widest hover:opacity-80 transition-opacity"
+                  className="text-brand-accent font-heading font-bold text-xs uppercase tracking-widest hover:opacity-80 transition-opacity"
                 >
                   {link.label} →
                 </Link>
@@ -47,7 +47,7 @@ export function FooterSection() {
                 <a
                   key={link.label}
                   href={link.href}
-                  className="text-[var(--brand-soft)]/50 font-sans text-xs uppercase tracking-widest hover:text-[var(--brand-accent)] transition-colors"
+                  className="text-(--brand-soft)/50 font-sans text-xs uppercase tracking-widest hover:text-brand-accent transition-colors"
                 >
                   {link.label}
                 </a>
@@ -57,7 +57,7 @@ export function FooterSection() {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-10 pt-6 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-3 text-[var(--brand-soft)]/30 text-xs font-sans">
+        <div className="mt-10 pt-6 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-3 text-(--brand-soft)/30 text-xs font-sans">
           <p>© 2026 EXEIV. All rights reserved.</p>
           <p>Operating Worldwide</p>
         </div>

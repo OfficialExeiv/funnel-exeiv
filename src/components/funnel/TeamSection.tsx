@@ -2,18 +2,18 @@ import { TEAM } from "@/lib/constants";
 
 export function TeamSection() {
   return (
-    <section className="relative py-24 md:py-32 bg-[var(--brand-dark)]">
+    <section className="relative py-24 md:py-32 bg-brand-dark">
       <div className="max-w-6xl mx-auto px-6 md:px-8">
         {/* Header */}
         <div className="text-center mb-20">
-          <span className="text-[var(--brand-accent)] text-xs uppercase tracking-widest font-bold font-heading block mb-4">
+          <span className="text-brand-accent text-xs uppercase tracking-widest font-bold font-heading block mb-4">
             Who You Work With
           </span>
-          <h2 className="font-heading text-4xl md:text-5xl font-bold text-[var(--brand-base)] mb-5">
+          <h2 className="font-heading text-4xl md:text-5xl font-bold text-brand-base mb-5">
             Engineers Who{" "}
-            <span className="text-[var(--brand-accent)]">Own the Outcome</span>
+            <span className="text-brand-accent">Own the Outcome</span>
           </h2>
-          <p className="text-[var(--brand-soft)] font-sans text-lg max-w-2xl mx-auto">
+          <p className="text-brand-soft font-sans text-lg max-w-2xl mx-auto">
             Remote-first. Globally trusted. No middlemen. No account managers.
             You work directly with us.
           </p>
@@ -37,20 +37,20 @@ export function TeamSection() {
                 {member.initials}
               </div>
 
-              <h3 className="font-heading text-2xl font-bold text-[var(--brand-base)] mb-1 group-hover:text-[var(--brand-accent)] transition-colors">
+              <h3 className="font-heading text-2xl font-bold text-brand-base mb-1 group-hover:text-brand-accent transition-colors">
                 {member.name}
               </h3>
-              <div className="text-[var(--brand-soft)] text-xs uppercase tracking-widest font-bold mb-7">
+              <div className="text-brand-soft text-xs uppercase tracking-widest font-bold mb-7">
                 {member.role}
               </div>
 
               <ul className="space-y-2.5 text-left w-full">
                 {member.creds.map((cred) => (
                   <li key={cred} className="flex items-start gap-3">
-                    <span className="text-[var(--brand-accent)] font-bold shrink-0 text-sm mt-0.5">
+                    <span className="text-brand-accent font-bold shrink-0 text-sm mt-0.5">
                       ✓
                     </span>
-                    <span className="text-[var(--brand-soft)] font-sans text-base">
+                    <span className="text-brand-soft font-sans text-base">
                       {cred}
                     </span>
                   </li>

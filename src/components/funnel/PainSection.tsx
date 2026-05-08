@@ -13,9 +13,9 @@ function PainIcon({ type }: { type: string }) {
   };
 
   return (
-    <div className="w-11 h-11 rounded-xl bg-[var(--brand-accent)]/8 border border-[var(--brand-accent)]/15 flex items-center justify-center shrink-0 group-hover:bg-[var(--brand-accent)]/15 transition-colors duration-300">
+    <div className="w-11 h-11 rounded-xl bg-brand-accent/8 border border-brand-accent/15 flex items-center justify-center shrink-0 group-hover:bg-(--brand-accent)/15 transition-colors duration-300">
       <svg
-        className="w-5 h-5 text-[var(--brand-accent)]"
+        className="w-5 h-5 text-brand-accent"
         fill="none"
         stroke="currentColor"
         viewBox="0 0 24 24"
@@ -36,22 +36,22 @@ export function PainSection() {
   return (
     <section
       id="pain"
-      className="relative py-24 md:py-32 bg-[var(--brand-dark)] overflow-hidden"
+      className="relative py-24 md:py-32 bg-brand-dark overflow-hidden"
     >
       {/* Top separator */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-px bg-gradient-to-r from-transparent via-white/8 to-transparent" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-px bg-linear-to-r from-transparent via-white/8 to-transparent" />
 
       <div className="max-w-6xl mx-auto px-6 md:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <span className="inline-block text-[var(--brand-accent)] text-xs uppercase tracking-widest font-bold font-heading mb-4">
+          <span className="inline-block text-brand-accent text-xs uppercase tracking-widest font-bold font-heading mb-4">
             If Any of These Sound Familiar...
           </span>
-          <h2 className="font-heading text-4xl md:text-5xl font-bold text-[var(--brand-base)] mb-5">
+          <h2 className="font-heading text-4xl md:text-5xl font-bold text-brand-base mb-5">
             You&apos;re Not Broken.{" "}
-            <span className="text-[var(--brand-accent)]">Your Tech Stack Is.</span>
+            <span className="text-brand-accent">Your Tech Stack Is.</span>
           </h2>
-          <p className="text-[var(--brand-soft)] font-sans text-lg max-w-xl mx-auto">
+          <p className="text-brand-soft font-sans text-lg max-w-xl mx-auto">
             Every one of these is a revenue leak. Quiet, daily, expensive.
           </p>
         </div>
@@ -64,15 +64,15 @@ export function PainSection() {
               className="card-hover glass group p-6 md:p-8 rounded-2xl relative overflow-hidden"
             >
               {/* Left accent bar on hover */}
-              <div className="absolute left-0 top-0 h-full w-0.5 bg-[var(--brand-accent)] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute left-0 top-0 h-full w-0.5 bg-brand-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
               <div className="flex items-start gap-5">
                 <PainIcon type={point.icon} />
                 <div>
-                  <p className="font-heading font-bold text-[var(--brand-base)] text-base md:text-lg mb-2 leading-snug">
+                  <p className="font-heading font-bold text-brand-base text-base md:text-lg mb-2 leading-snug">
                     {point.pain}
                   </p>
-                  <p className="text-[var(--brand-soft)] font-sans text-sm leading-relaxed">
+                  <p className="text-brand-soft font-sans text-sm leading-relaxed">
                     {point.cost}
                   </p>
                 </div>
@@ -83,9 +83,9 @@ export function PainSection() {
 
         {/* Bottom callout */}
         <div className="mt-14 text-center">
-          <p className="text-[var(--brand-base)]/70 font-sans text-base md:text-lg mb-8 max-w-lg mx-auto">
+          <p className="text-brand-base/70 font-sans text-base md:text-lg mb-8 max-w-lg mx-auto">
             Every one of these is a revenue leak.{" "}
-            <span className="text-[var(--brand-base)] font-semibold">
+            <span className="text-brand-base font-semibold">
               We find them. We fix them.
             </span>
           </p>
@@ -94,7 +94,7 @@ export function PainSection() {
             target="_blank"
             rel="noopener noreferrer"
             id="pain-cta"
-            className="cta-glow inline-flex items-center gap-3 bg-[var(--brand-accent)] text-white font-heading font-bold px-8 py-4 rounded-xl transition-all hover:opacity-90 tracking-wide"
+            className="cta-glow inline-flex items-center gap-3 bg-brand-accent text-white font-heading font-bold px-8 py-4 rounded-xl transition-all hover:opacity-90 tracking-wide"
           >
             Show Me My Leaks →
           </Link>

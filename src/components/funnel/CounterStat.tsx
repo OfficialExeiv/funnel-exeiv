@@ -52,10 +52,10 @@ export function CounterStat({
 
   return (
     <div ref={ref} className="flex flex-col items-center gap-1.5">
-      <span className="font-heading text-3xl md:text-4xl font-bold text-[var(--brand-accent)]">
+      <span className="font-heading text-3xl md:text-4xl font-bold text-brand-accent">
         {prefix}{count}{suffix}
       </span>
-      <span className="text-[var(--brand-soft)] text-xs uppercase tracking-widest font-medium text-center leading-tight">
+      <span className="text-brand-soft text-xs uppercase tracking-widest font-medium text-center leading-tight">
         {label}
       </span>
     </div>

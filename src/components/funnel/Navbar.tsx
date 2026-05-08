@@ -38,7 +38,7 @@ export function Navbar() {
         <div
           className={`glass rounded-2xl md:rounded-3xl transition-all duration-500 flex items-center justify-between px-6 md:px-10 ${
             scrolled
-              ? "h-16 shadow-[0_20px_50px_rgba(0,0,0,0.5),0_0_20px_rgba(115,60,151,0.15)] border-[var(--brand-accent)]/20"
+              ? "h-16 shadow-[0_20px_50px_rgba(0,0,0,0.5),0_0_20px_rgba(115,60,151,0.15)] border-(--brand-accent)/20"
               : "h-20 md:h-24 border-white/5"
           }`}
         >
@@ -60,10 +60,10 @@ export function Navbar() {
               <a
                 key={link.label}
                 href={link.href}
-                className="relative font-heading text-xs font-bold uppercase tracking-widest text-[var(--brand-soft)] hover:text-[var(--brand-accent)] transition-colors duration-300 group"
+                className="relative font-heading text-xs font-bold uppercase tracking-widest text-brand-soft hover:text-brand-accent transition-colors duration-300 group"
               >
                 {link.label}
-                <span className="absolute -bottom-1 left-0 h-px w-0 bg-[var(--brand-accent)] transition-all duration-300 group-hover:w-full" />
+                <span className="absolute -bottom-1 left-0 h-px w-0 bg-brand-accent transition-all duration-300 group-hover:w-full" />
               </a>
             ))}
 
@@ -73,7 +73,7 @@ export function Navbar() {
               rel="noopener noreferrer"
               id="nav-cta"
               aria-label="Book free audit"
-              className="cta-glow cta-pulse shrink-0 bg-[var(--brand-accent)] text-white font-heading font-bold text-xs uppercase tracking-[0.18em] px-7 py-4 rounded-xl transition-all duration-300 hover:opacity-90"
+              className="cta-glow cta-pulse shrink-0 bg-brand-accent text-white font-heading font-bold text-xs uppercase tracking-[0.18em] px-7 py-4 rounded-xl transition-all duration-300 hover:opacity-90"
             >
               Free Audit →
             </Link>
@@ -88,17 +88,17 @@ export function Navbar() {
             className="md:hidden w-11 h-11 flex flex-col items-center justify-center gap-[5px] cursor-pointer glass rounded-xl shrink-0"
           >
             <span
-              className={`block w-5 h-0.5 rounded-full bg-[var(--brand-base)] transition-all duration-300 ${
+              className={`block w-5 h-0.5 rounded-full bg-brand-base transition-all duration-300 ${
                 open ? "rotate-45 translate-y-[7px]" : ""
               }`}
             />
             <span
-              className={`block w-5 h-0.5 rounded-full bg-[var(--brand-base)] transition-all duration-300 ${
+              className={`block w-5 h-0.5 rounded-full bg-brand-base transition-all duration-300 ${
                 open ? "opacity-0 scale-x-0" : ""
               }`}
             />
             <span
-              className={`block w-5 h-0.5 rounded-full bg-[var(--brand-base)] transition-all duration-300 ${
+              className={`block w-5 h-0.5 rounded-full bg-brand-base transition-all duration-300 ${
                 open ? "-rotate-45 -translate-y-[7px]" : ""
               }`}
             />
@@ -108,7 +108,7 @@ export function Navbar() {
 
       {/* ── Mobile fullscreen menu ── */}
       <div
-        className={`fixed inset-0 bg-[var(--brand-dark)]/98 backdrop-blur-xl z-[-1] md:hidden flex flex-col items-center justify-center gap-10 px-8 transition-all duration-500 ${
+        className={`fixed inset-0 bg-(--brand-dark)/98 backdrop-blur-xl z-[-1] md:hidden flex flex-col items-center justify-center gap-10 px-8 transition-all duration-500 ${
           open
             ? "opacity-100 translate-y-0 pointer-events-auto"
             : "opacity-0 -translate-y-4 pointer-events-none"
@@ -120,7 +120,7 @@ export function Navbar() {
             key={link.label}
             href={link.href}
             onClick={() => setOpen(false)}
-            className="font-heading text-2xl font-bold tracking-widest text-[var(--brand-base)] hover:text-[var(--brand-accent)] transition-colors"
+            className="font-heading text-2xl font-bold tracking-widest text-brand-base hover:text-brand-accent transition-colors"
           >
             {link.label}
           </a>
@@ -131,7 +131,7 @@ export function Navbar() {
           target="_blank"
           rel="noopener noreferrer"
           onClick={() => setOpen(false)}
-          className="cta-glow w-full max-w-xs bg-[var(--brand-accent)] text-white font-heading font-bold text-base uppercase tracking-[0.2em] py-5 px-6 rounded-2xl text-center"
+          className="cta-glow w-full max-w-xs bg-brand-accent text-white font-heading font-bold text-base uppercase tracking-[0.2em] py-5 px-6 rounded-2xl text-center"
         >
           Free Audit →
         </Link>

@@ -73,18 +73,18 @@ export function TestimonialShowcase() {
   const doubled = [...TESTIMONIALS, ...TESTIMONIALS];
 
   return (
-    <section className="relative py-24 md:py-32 bg-[var(--brand-dark)] overflow-hidden">
+    <section className="relative py-24 md:py-32 bg-brand-dark overflow-hidden">
       <div className="max-w-6xl mx-auto px-6 md:px-8">
         {/* Header */}
         <div className="text-center mb-16 md:mb-20">
-          <span className="text-[var(--brand-accent)] text-xs uppercase tracking-widest font-bold font-heading block mb-4">
+          <span className="text-brand-accent text-xs uppercase tracking-widest font-bold font-heading block mb-4">
             Social Proof
           </span>
-          <h2 className="font-heading text-4xl md:text-5xl font-bold text-[var(--brand-base)] mb-5">
+          <h2 className="font-heading text-4xl md:text-5xl font-bold text-brand-base mb-5">
             Founders Don&apos;t Lie.{" "}
-            <span className="text-[var(--brand-accent)]">Read What Theirs Said.</span>
+            <span className="text-brand-accent">Read What Theirs Said.</span>
           </h2>
-          <p className="text-[var(--brand-soft)] font-sans text-lg max-w-xl mx-auto">
+          <p className="text-brand-soft font-sans text-lg max-w-xl mx-auto">
             Real results from founders who trusted us with their most critical tech.
           </p>
         </div>
@@ -101,7 +101,7 @@ export function TestimonialShowcase() {
             {doubled.map((t, i) => (
               <div
                 key={i}
-                className="w-[340px] md:w-[400px] shrink-0 glass p-8 rounded-[2rem] flex flex-col justify-between border-white/5 hover:border-[var(--brand-accent)]/20 transition-all duration-500 group"
+                className="w-[340px] md:w-[400px] shrink-0 glass p-8 rounded-[2rem] flex flex-col justify-between border-white/5 hover:border-(--brand-accent)/20 transition-all duration-500 group"
               >
                 <div>
                   {/* Stars */}
@@ -109,7 +109,7 @@ export function TestimonialShowcase() {
                     {Array.from({ length: 5 }).map((_, j) => (
                       <svg
                         key={j}
-                        className="w-4 h-4 text-[var(--brand-accent)] fill-current"
+                        className="w-4 h-4 text-brand-accent fill-current"
                         viewBox="0 0 20 20"
                         aria-hidden="true"
                       >
@@ -118,7 +118,7 @@ export function TestimonialShowcase() {
                     ))}
                   </div>
 
-                  <blockquote className="text-[var(--brand-soft)] font-sans text-base leading-relaxed mb-6 group-hover:text-[var(--brand-base)] transition-colors">
+                  <blockquote className="text-brand-soft font-sans text-base leading-relaxed mb-6 group-hover:text-brand-base transition-colors">
                     &ldquo;{t.quote}&rdquo;
                   </blockquote>
                 </div>
@@ -132,16 +132,16 @@ export function TestimonialShowcase() {
                     {t.initials}
                   </div>
                   <div>
-                    <div className="font-heading font-bold text-[var(--brand-base)] text-sm">
+                    <div className="font-heading font-bold text-brand-base text-sm">
                       {t.name}
                     </div>
-                    <div className="text-[var(--brand-soft)]/50 text-xs uppercase tracking-widest">
+                    <div className="text-(--brand-soft)/50 text-xs uppercase tracking-widest">
                       {t.context}
                     </div>
                   </div>
                   {/* Verified badge */}
                   <div className="ml-auto shrink-0">
-                    <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-[var(--brand-accent)]/10 border border-[var(--brand-accent)]/20 text-[var(--brand-accent)] text-[10px] font-bold uppercase tracking-wider">
+                    <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-(--brand-accent)/10 border border-(--brand-accent)/20 text-brand-accent text-[10px] font-bold uppercase tracking-wider">
                       ✓ Verified
                     </span>
                   </div>
@@ -151,8 +151,8 @@ export function TestimonialShowcase() {
           </div>
 
           {/* Edge fades */}
-          <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-[var(--brand-dark)] to-transparent z-10 pointer-events-none" />
-          <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-[var(--brand-dark)] to-transparent z-10 pointer-events-none" />
+          <div className="absolute inset-y-0 left-0 w-24 bg-linear-to-r from-brand-dark to-transparent z-10 pointer-events-none" />
+          <div className="absolute inset-y-0 right-0 w-24 bg-linear-to-l from-brand-dark to-transparent z-10 pointer-events-none" />
         </div>
       </div>
     </section>

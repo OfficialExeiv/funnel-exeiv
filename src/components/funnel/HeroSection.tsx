@@ -5,7 +5,7 @@ import { CounterStat } from "@/components/funnel/CounterStat";
 export function HeroSection() {
   return (
     <section
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[var(--brand-dark)]"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-brand-dark"
       aria-label="Hero"
     >
       {/* Animated grid */}
@@ -30,16 +30,16 @@ export function HeroSection() {
 
       <div className="relative z-10 max-w-5xl mx-auto px-6 md:px-8 text-center pt-32 pb-28 md:pt-44 md:pb-36">
         {/* Status pill */}
-        <div className="anim-reveal anim-delay-1 inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border border-[var(--brand-accent)]/25 bg-[var(--brand-accent)]/5 text-[var(--brand-soft)] text-xs font-medium tracking-widest uppercase mb-10">
+        <div className="anim-reveal anim-delay-1 inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border border-(--brand-accent)/25 bg-(--brand-accent)/5 text-brand-soft text-xs font-medium tracking-widest uppercase mb-10">
           <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[var(--brand-accent)] opacity-75" />
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-[var(--brand-accent)]" />
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-accent opacity-75" />
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-accent" />
           </span>
           Engineering Premium Solutions for Founders
         </div>
 
         {/* H1 */}
-        <h1 className="anim-reveal anim-delay-2 font-heading text-5xl md:text-7xl lg:text-[5.5rem] font-extrabold text-[var(--brand-base)] leading-[1.02] tracking-tight mb-8">
+        <h1 className="anim-reveal anim-delay-2 font-heading text-5xl md:text-7xl lg:text-[5.5rem] font-extrabold text-brand-base leading-[1.02] tracking-tight mb-8">
           Your Business Runs.
           <br />
           <span
@@ -55,7 +55,7 @@ export function HeroSection() {
         </h1>
 
         {/* Subhead */}
-        <p className="anim-reveal anim-delay-3 text-lg md:text-xl text-[var(--brand-soft)] max-w-2xl mx-auto leading-relaxed font-sans mb-12">
+        <p className="anim-reveal anim-delay-3 text-lg md:text-xl text-brand-soft max-w-2xl mx-auto leading-relaxed font-sans mb-12">
           We architect custom tech stacks that eliminate revenue leaks, automate
           broken workflows, and make your operation run like a machine.
         </p>
@@ -68,23 +68,23 @@ export function HeroSection() {
             rel="noopener noreferrer"
             id="hero-primary-cta"
             aria-label="Claim your free audit"
-            className="cta-glow cta-pulse group relative bg-[var(--brand-accent)] text-white font-heading font-bold px-10 py-5 rounded-2xl transition-all duration-300 tracking-wide text-lg overflow-hidden"
+            className="cta-glow cta-pulse group relative bg-brand-accent text-white font-heading font-bold px-10 py-5 rounded-2xl transition-all duration-300 tracking-wide text-lg overflow-hidden"
           >
             <span className="relative z-10">Claim Your Free Audit</span>
-            <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/15 to-white/0 -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
+            <div className="absolute inset-0 bg-linear-to-r from-white/0 via-white/15 to-white/0 -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
           </Link>
 
           <a
             href="#how-it-works"
             id="hero-secondary-cta"
-            className="glass border border-white/10 text-[var(--brand-base)] hover:border-[var(--brand-accent)]/30 font-heading font-semibold px-10 py-5 rounded-2xl transition-all duration-300 text-lg"
+            className="glass border border-white/10 text-brand-base hover:border-(--brand-accent)/30 font-heading font-semibold px-10 py-5 rounded-2xl transition-all duration-300 text-lg"
           >
             See How It Works ↓
           </a>
         </div>
 
         {/* Trust bar */}
-        <div className="anim-reveal anim-delay-4 mb-16 flex flex-wrap items-center justify-center gap-x-7 gap-y-3 text-[var(--brand-soft)] text-xs font-sans tracking-widest uppercase">
+        <div className="anim-reveal anim-delay-4 mb-16 flex flex-wrap items-center justify-center gap-x-7 gap-y-3 text-brand-soft text-xs font-sans tracking-widest uppercase">
           {[
             "120+ Products Shipped",
             "$0 Audit",
@@ -93,7 +93,7 @@ export function HeroSection() {
           ].map((item, i) => (
             <span key={i} className="flex items-center gap-2">
               <svg
-                className="w-3.5 h-3.5 text-[var(--brand-accent)] shrink-0"
+                className="w-3.5 h-3.5 text-brand-accent shrink-0"
                 fill="currentColor"
                 viewBox="0 0 20 20"
                 aria-hidden="true"

@@ -38,7 +38,7 @@ export function SocialProofToast() {
 
   return (
     <div
-      className={`fixed bottom-6 left-4 z-[200] transition-all duration-500 ${
+      className={`fixed bottom-6 left-4 z-200 transition-all duration-500 ${
         visible
           ? "opacity-100 translate-y-0"
           : "opacity-0 translate-y-4 pointer-events-none"
@@ -49,21 +49,21 @@ export function SocialProofToast() {
     >
       <div className="glass-accent rounded-2xl px-5 py-4 flex items-center gap-4 max-w-xs shadow-2xl">
         {/* Avatar */}
-        <div className="w-9 h-9 rounded-full bg-[var(--brand-accent)] flex items-center justify-center text-black font-bold text-xs shrink-0">
+        <div className="w-9 h-9 rounded-full bg-brand-accent flex items-center justify-center text-black font-bold text-xs shrink-0">
           {current.name.charAt(0)}
         </div>
         <div>
           <p className="text-white text-sm font-heading font-bold leading-tight">
             {current.name} just booked their free audit
           </p>
-          <p className="text-[var(--brand-soft)] text-xs mt-0.5">{current.time}</p>
+          <p className="text-brand-soft text-xs mt-0.5">{current.time}</p>
         </div>
         {/* Dismiss */}
         <button
           type="button"
           onClick={() => setVisible(false)}
           aria-label="Dismiss"
-          className="ml-2 text-[var(--brand-soft)] hover:text-white text-xs shrink-0"
+          className="ml-2 text-brand-soft hover:text-white text-xs shrink-0"
         >
           ✕
         </button>
